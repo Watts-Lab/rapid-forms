@@ -30,7 +30,10 @@ export default function Base({
       </span>
       <span>
         {' '}
-        <p className="rapid-forms-description" data-testid={`${name}-description`}>
+        <p
+          className="rapid-forms-description"
+          data-testid={`${name}-description`}
+        >
           {description}
         </p>{' '}
       </span>

@@ -4,8 +4,7 @@ import Checkbox from './inputs/checkbox';
 import Radio from './inputs/radio';
 import Submit from './inputs/submit';
 
-
-export type ElementTypes = "checkbox" | "radio" ;
+export type ElementTypes = 'checkbox' | 'radio';
 
 export type Element = {
   type: ElementTypes;
@@ -33,9 +32,10 @@ export const SinglePageForm = ({
   onChange,
   onSubmit,
 }: FormProps) => {
-
   const createInput = (element: Element) => {
-    switch (element.type) {// find right input based on type
+    switch (
+      element.type // find right input based on type
+    ) {
       case 'radio':
         return <Radio {...element} onChange={onChange} />;
       case 'checkbox':
@@ -46,7 +46,11 @@ export const SinglePageForm = ({
   };
 
   return (
-    <form onSubmit={onSubmit} className="rapid-form-single-page" data-testid="rapid-form">
+    <form
+      onSubmit={onSubmit}
+      className="rapid-form-single-page"
+      data-testid="rapid-form"
+    >
       {elements.map(element => createInput(element))}
       {hiddenAttributes?.map(attribute => (
         <input type="hidden" name={attribute.key} value={attribute.value} />
