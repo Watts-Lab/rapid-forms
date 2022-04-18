@@ -12,3 +12,4 @@ Thumbs.db
 .json
 # Source files
 src
+*.secrets
