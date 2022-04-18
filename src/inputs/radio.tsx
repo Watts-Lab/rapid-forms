@@ -22,7 +22,7 @@ export default function Radio({
       <React.Fragment key={`${name}-${choice}-${index}-key`}>
         <input
           type="radio"
-          className="form-radio"
+          className="rapid-forms-radio-input"
           value={choice}
           name={name}
           id={id}
@@ -31,7 +31,7 @@ export default function Radio({
           onChange={onChange}
         />
         <label
-          className="form-radio-label"
+          className="rapid-forms-radio-label"
           htmlFor={id}
           data-testid={id + '-label'}
         >

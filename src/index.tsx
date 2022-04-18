@@ -33,8 +33,9 @@ export const SinglePageForm = ({
   onChange,
   onSubmit,
 }: FormProps) => {
+
   const createInput = (element: Element) => {
-    switch (element.type) {
+    switch (element.type) {// find right input based on type
       case 'radio':
         return <Radio {...element} onChange={onChange} />;
       case 'checkbox':
@@ -45,7 +46,7 @@ export const SinglePageForm = ({
   };
 
   return (
-    <form onSubmit={onSubmit} data-testid="watts-form">
+    <form onSubmit={onSubmit} className="rapid-form-single-page" data-testid="rapid-form">
       {elements.map(element => createInput(element))}
       {hiddenAttributes?.map(attribute => (
         <input type="hidden" name={attribute.key} value={attribute.value} />

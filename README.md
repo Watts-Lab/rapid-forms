@@ -1,11 +1,75 @@
 # Rapid Forms
 
-This project is a minimalist framework to allow for rapid creation of forms. The philosophy of this framework is to be extremely unopionated with styling, be extremely flexible, and easy to use.
+This project is a minimalist framework to allow for rapid creation of forms. The philosophy of this framework is to be extremely unopionated with styling, be extremely flexible, and easy to use. 
+
+Package created and maintained by Watts Lab at the University of Pennsylvania
+
+** Contributors **
+Sumant R. Shringari
 
 ## Installation
 `npm install @watts-lab/rapid-forms`
 
+## Contributors
+
+## Contributing to the codebase
+The code base is organized with two key components-- src/index.tsx and `src/inputs/*.tsx`. Index.tsx is a main entrypoint for the code and exports components that can be used when rapid-forms is imported. Currently, there is one key component that is exported which is the SinglePageForms. `inputs/*.ts` contains all the individual input components that are used in Forms. **Every input should be individually tested. No PR will be accepted without a test for your input**
+
+## Publishing to npm with np
+We use np for publshing to npm
+Install with the following command `npm install --global np`
+To Publish, simply `np` in the root directory
+
+
 ## Usage 
+
+### Styling 
+All forms come unformated. To format, these inputs with your css stylings, you can override global inputs such as
+```css
+input[type="radio"] {
+    // your css
+}
+```
+
+Or you can override them through rapid forms classname in your css style sheets. This is an exhaustive list
+
+```css
+.rapid-form-single-page {
+   // your css
+}
+
+.rapid-forms-input-block {
+   // your css
+}
+
+.rapid-forms-title {
+    // your css
+}
+
+.rapid-forms-description {
+    // your css
+}
+
+.rapid-forms-submit {
+    // your css
+}
+
+.rapid-forms-checkbox-input {
+    // your css
+}
+
+.rapid-forms-checkbox-label {
+    // your css
+}
+
+.rapid-forms-radio-input {
+    // your css
+}
+
+.rapid-forms-radio-label {
+    // your css
+}
+```
 
 ### Single Page Form
 
