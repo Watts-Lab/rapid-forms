@@ -4,8 +4,11 @@ import Checkbox from './inputs/checkbox';
 import Radio from './inputs/radio';
 import Submit from './inputs/submit';
 
+
+export type ElementTypes = "checkbox" | "radio" ;
+
 export type Element = {
-  type: string;
+  type: ElementTypes;
   name: string;
   title: string;
   description?: any;

@@ -34,7 +34,6 @@ export default function Base({
           {description}
         </p>{' '}
       </span>
-      <hr />
       {children}
     </div>
   );
