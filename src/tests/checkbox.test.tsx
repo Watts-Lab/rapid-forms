@@ -32,9 +32,8 @@ test('check for correct title in heading', async () => {
     fail('result is undefined');
   }
 
-  expect(result.container.getElementsByClassName('base-title')).toHaveLength(1);
   expect(
-    result.container.getElementsByClassName('base-title')[0].textContent
+    result.getByTestId(`${name}-title`).textContent
   ).toBe(title);
 });
 
@@ -44,25 +43,23 @@ test('check for correct description in heading', async () => {
   }
 
   expect(
-    result.container.getElementsByClassName('base-description')
-  ).toHaveLength(1);
-  expect(
-    result.container.getElementsByClassName('base-description')[0].textContent
+    result.getByTestId(`${name}-description`).textContent
   ).toBe(description);
 });
+
 
 test('check for correct name in input', async () => {
   if (result === undefined) {
     fail('result is undefined');
   }
 
-  expect(result.container.getElementsByClassName('form-checkbox')).toHaveLength(
+  expect(result.getAllByRole("checkbox")).toHaveLength(
     choices.length
   );
-  const inputs = result.container.getElementsByClassName('form-checkbox-label');
-  for (let i = 0; i < choices.length; i++) {
-    const input = inputs[i] as HTMLInputElement;
-    expect(input.textContent?.trim()).toBe(choices[i].trim());
+
+  for (let choice of choices) {
+    const input = result.getByTestId(`${name}-${choice}-label`);
+    expect(input.textContent?.trim()).toBe(choice.trim());
   }
 });
 
@@ -71,11 +68,11 @@ test('check clicking of checkbox', async () => {
     fail('result is undefined');
   }
 
-  expect(result.container.getElementsByClassName('form-checkbox')).toHaveLength(
+  expect(result.getAllByRole('checkbox')).toHaveLength(
     3
   );
 
-  const checkboxes = result.container.getElementsByClassName('form-checkbox');
+  const checkboxes = result.getAllByRole('checkbox');
 
   for (let i = 0; i < checkboxes.length; i++) {
     const checkbox = checkboxes[i] as HTMLInputElement;
