@@ -13,6 +13,7 @@
     "scripts": {
         "start": "tsdx watch",
         "build": "tsdx build",
+        "prepublish": "tsdx build",
         "test": "jest --silent --testEnvironment jsdom --coverage",
         "lint": "tsdx lint --fix",
         "prepare": "tsdx build",
@@ -33,7 +34,7 @@
         "singleQuote": true,
         "trailingComma": "es5"
     },
-    "name": "rapid-forms",
+    "name": "@watts-lab/rapid-forms",
     "author": "Sumant R Shringari <sumant.r.shringari@gmail.com>",
     "contributors": [],
     "module": "dist/rapid-forms.esm.js",
