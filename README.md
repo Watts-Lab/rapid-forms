@@ -5,6 +5,10 @@ This project is a minimalist framework to allow for rapid creation of forms. The
 Package created and maintained by Watts Lab at the University of Pennsylvania
 
 ## Installation
+For the latest release,
+`npm install https://github.com/Watts-Lab/rapid-forms`
+
+For the stable release,
 `npm install @watts-lab/rapid-forms`
 
 ## Contributors
