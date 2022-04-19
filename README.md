@@ -4,9 +4,6 @@ This project is a minimalist framework to allow for rapid creation of forms. The
 
 Package created and maintained by Watts Lab at the University of Pennsylvania
 
-** Contributors **
-Sumant R. Shringari
-
 ## Installation
 `npm install @watts-lab/rapid-forms`
 
@@ -194,3 +191,9 @@ const App = () => {
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
+
+
+Contributors
+-------------
+1. Sumant R. Shringari
+
