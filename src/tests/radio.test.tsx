@@ -32,9 +32,8 @@ test('check for correct title in heading', async () => {
     fail('result is undefined');
   }
 
-  expect(result.container.getElementsByClassName('base-title')).toHaveLength(1);
   expect(
-    result.container.getElementsByClassName('base-title')[0].textContent
+    result.getByTestId(`${name}-title`).textContent
   ).toBe(title);
 });
 
@@ -44,10 +43,7 @@ test('check for correct description in heading', async () => {
   }
 
   expect(
-    result.container.getElementsByClassName('base-description')
-  ).toHaveLength(1);
-  expect(
-    result.container.getElementsByClassName('base-description')[0].textContent
+    result.getByTestId(`${name}-description`).textContent
   ).toBe(description);
 });
 
@@ -56,13 +52,12 @@ test('check for correct name in input', async () => {
     fail('result is undefined');
   }
 
-  expect(result.container.getElementsByClassName('form-radio')).toHaveLength(
+  expect(result.getAllByRole('radio')).toHaveLength(
     choices.length
   );
-  const inputs = result.container.getElementsByClassName('form-radio-label');
-  for (let i = 0; i < choices.length; i++) {
-    const input = inputs[i] as HTMLInputElement;
-    expect(input.textContent?.trim()).toBe(choices[i].trim());
+  for (let choice of choices) {
+    const label = result.getByTestId(`${name}-${choice}-label`);
+    expect(label.textContent?.trim()).toBe(choice.trim());
   }
 });
 
@@ -71,9 +66,9 @@ test('check clicking of radio', async () => {
     fail('result is undefined');
   }
 
-  expect(result.container.getElementsByClassName('form-radio')).toHaveLength(3);
+  expect(result.getAllByRole('radio')).toHaveLength(3);
 
-  const radioes = result.container.getElementsByClassName('form-radio');
+  const radioes = result.getAllByRole('radio');
 
   for (let i = 0; i < radioes.length; i++) {
     const radio = radioes[i] as HTMLInputElement;

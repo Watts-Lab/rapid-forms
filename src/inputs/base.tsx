@@ -21,20 +21,22 @@ export default function Base({
   children,
 }: BaseInputProps) {
   return (
-    <div className="inputBlock">
+    <div className="rapid-forms-input-block inputBlock">
       <span>
         {' '}
-        <h4 className="base-title" data-testid={`${name}-title`}>
+        <h4 className="rapid-forms-title" data-testid={`${name}-title`}>
           {title}
         </h4>{' '}
       </span>
       <span>
         {' '}
-        <p className="base-description" data-testid={`${name}-description`}>
+        <p
+          className="rapid-forms-description"
+          data-testid={`${name}-description`}
+        >
           {description}
         </p>{' '}
       </span>
-      <hr />
       {children}
     </div>
   );

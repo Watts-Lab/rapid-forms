@@ -18,7 +18,7 @@ const Option = ({ choice, name, index, onChange }: CheckboxComponent) => {
     <React.Fragment key={`${name}-${choice}-${index}-key`}>
       <input
         type="checkbox"
-        className="form-checkbox"
+        className="rapid-forms-checkbox-input"
         value={choice}
         name={`${name}-${index}`}
         onChange={onChange}
@@ -26,7 +26,7 @@ const Option = ({ choice, name, index, onChange }: CheckboxComponent) => {
         data-testid={id + '-input'}
       />
       <label
-        className="form-checkbox-label"
+        className="rapid-forms-checkbox-label"
         htmlFor={`${name}-${choice}`}
         id={id}
         data-testid={id + '-label'}

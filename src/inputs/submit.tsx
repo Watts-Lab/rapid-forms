@@ -4,8 +4,8 @@ export default function Submit() {
   return (
     <input
       type="submit"
-      className="form-input w-full"
-      data-testid="watts-form-submit"
+      className="rapid-forms-submit"
+      data-testid="rapid-forms-submit"
     />
   );
 }
