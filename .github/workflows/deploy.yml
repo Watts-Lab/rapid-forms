@@ -1,0 +1,33 @@
+name: deploy
+on: 
+  push: 
+    branches: [main]
+  
+jobs:
+  build:
+    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Use Node 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
+
+      - name: Build
+        run: npm run build
+
+      - name: Install np
+        run: npm install --global np
+
+      - name: Deploy
+        run: np patch
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}h
