@@ -109,6 +109,8 @@ data for changes in state.
 
 Note that checkbox and radio groups will have checked element and must be handled seperately.
 ```tsx
+const data = React.useRef<Record<string, any>>({});
+
 const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
     const name = event.target.name
@@ -124,7 +126,6 @@ On submission, the reference data will have all the information
 const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     // do something with data
-    setSubmitted(true)
     console.log(data.current)
 }
 ```
