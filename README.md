@@ -86,7 +86,7 @@ The format that a question takes is that of below. (? marks optional elements)
 ```
 
 Here is an example.
-```
+```tsx
   const questions: Element[] = [
     {
       type: 'radio',
